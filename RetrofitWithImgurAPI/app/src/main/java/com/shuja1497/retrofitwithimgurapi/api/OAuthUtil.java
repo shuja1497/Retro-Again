@@ -9,7 +9,13 @@ import android.support.annotation.Nullable;
  */
 public class OAuthUtil {
 
-    // TODO add constants here
+
+    // data getting back from the api must be stored in the shared prefs
+    public static final String ACCESS_TOKEN = "access_token";
+    public static final String EXPIRES_IN = "expires_in";
+    public static final String TOKEN_TYPE = "token_type";
+    public static final String REFRESH_TOKEN = "refresh_token";//we use this to get a new token once our token is expired
+    public static final String ACCOUNT_USERNAME = "account_username";
 
     private static SharedPreferences sOAuthCredentials;
 
@@ -48,8 +54,8 @@ public class OAuthUtil {
     }
 
     public static boolean isAuthorized() {
-        // TODO complete logic here
-        return false;
+        return get(ACCESS_TOKEN) != null &&
+                getLong(EXPIRES_IN) <  System.currentTimeMillis();
     }
 
 

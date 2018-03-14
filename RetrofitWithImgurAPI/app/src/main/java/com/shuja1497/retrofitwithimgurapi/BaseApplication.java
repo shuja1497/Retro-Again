@@ -1,8 +1,7 @@
 package com.shuja1497.retrofitwithimgurapi;
 
 import android.app.Application;
-
-import com.treehouse.android.retrofitworkshop.api.OAuthUtil;
+import com.shuja1497.retrofitwithimgurapi.api.OAuthUtil;
 
 
 public class BaseApplication extends Application {

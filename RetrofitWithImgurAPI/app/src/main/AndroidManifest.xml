@@ -15,6 +15,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!--if we view the url in data tag we want to go back in our app-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:scheme="https"
+                    android:host="treehouseworkshop"
+                    android:port="88"
+                    android:pathPattern="/.*"/>
+            </intent-filter>
         </activity>
     </application>
 
